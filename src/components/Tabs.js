@@ -19,7 +19,7 @@ const Tabs = ({tab}) => {
                 )}
             </ul>
             {tabClicked && 
-            <div>{tabClicked}</div>}
+            <p>This is the content for {tabClicked}.</p>}
         </div>
     )
 }
