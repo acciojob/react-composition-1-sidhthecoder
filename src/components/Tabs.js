@@ -5,21 +5,27 @@ import React,{useState} from "react";
 
 
 const Tabs = ({tab}) => {
-    const [tabClicked,setTabClicked]=useState("");   
+    const [tabClicked,setTabClicked]=useState(0);
+    
+    const handleTabClick = (index) => {
+        setTabClicked(index);
+      };
+
     return (
         <div>
             <ul>{
                 
-                tab.map((tabs)=>(
-                    <li onClick={()=>setTabClicked(tabs.contents)}>
+                tab.map((tabs,index)=>(
+                    <li key={index} onClick={()=>handleTabClick(index)}
+                    style={{cursor:'pointer'}}
+                    >
                     {tabs.titles}
                     </li>
                 )
 
                 )}
             </ul>
-            {tabClicked && 
-            <p>{tabClicked}</p>}
+            <div>{tab[tabClicked].contents}</div>
         </div>
     )
 }
