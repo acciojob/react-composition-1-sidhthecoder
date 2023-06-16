@@ -4,13 +4,13 @@ import React,{useState} from "react";
 
 
 
-const Tabs = ({tabs}) => {
+const Tabs = ({tab}) => {
     const [tabClicked,setTabClicked]=useState("");   
     return (
         <div>
             <ul>{
                 
-                tabs.map((tabs)=>(
+                tab.map((tabs)=>(
                     <li onClick={()=>setTabClicked(tabs.contents)}>
                     {tabs.titles}
                     </li>
@@ -19,7 +19,7 @@ const Tabs = ({tabs}) => {
                 )}
             </ul>
             {tabClicked && 
-            <p>This is the content for {tabClicked}</p>}
+            <p>{tabClicked}</p>}
         </div>
     )
 }
