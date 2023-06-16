@@ -5,7 +5,7 @@ import React,{useState} from "react";
 
 
 const Tabs = ({tab}) => {
-    const [tabClicked,setTabClicked]=useState("");   
+    const [tabClicked,setTabClicked]=useState("Tab 1");   
     return (
         <div>
             <ul>{
